@@ -46,6 +46,12 @@ public class RestaurantServiceImpl implements RestaurantService {
     public List<Restaurant> findAll(){
         return repository.findAll();
     }
+
+    @Override
+    public Restaurant addPizzasToRestaurant(Restaurant restaurant) {
+        return repository.save(restaurant);
+    }
+
     @Override
     public Restaurant update(Restaurant entity, Long id) {
         Optional<Restaurant> optional = findById(id);
