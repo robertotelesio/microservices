@@ -2,7 +2,6 @@ package com.myrestaurant.store.pizzarestaurantService.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -17,31 +16,38 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "pizzas")
-public class Pizza implements Serializable {
+@Table(name = "restaurants")
+public class Restaurant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pizza_id")
+    @Column(name = "restaurant_id")
     private Long id;
     @NotBlank
     @Size(max = 255)
     @Column(name = "name")
     private String name;
 
-    @Column(name = "favorite")
-    private boolean favorite;
+
+    @NotBlank
+    @Size(max = 255)
+    @Column(name = "address")
+    private String address;
+    @NotBlank
+    @Size(max = 255)
+    @Column(name = "city")
+    private String city;
 
     @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(
-            name = "pizzas_toppings",
+            name = "restaurant_drivers",
             joinColumns = @JoinColumn(
-                    name = "pizza_id", referencedColumnName = "pizza_id"),
+                    name = "restaurant_id", referencedColumnName = "restaurant_id"),
             inverseJoinColumns = @JoinColumn(
-                    name = "topping_id",referencedColumnName = "topping_id"
-        )
+                    name = "driver_id",referencedColumnName = "driver_id"
+            )
     )
     @JsonIgnore
-    //@Setter(AccessLevel.NONE)
-    private Set<Topping> toppings = new HashSet<>();
+    private Set<Driver> drivers = new HashSet<>();
+
 
  }

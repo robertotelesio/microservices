@@ -1,7 +1,6 @@
 package com.myrestaurant.store.pizzarestaurantService.service.impl;
 
 import com.myrestaurant.store.pizzarestaurantService.dao.ToppingRepo;
-import com.myrestaurant.store.pizzarestaurantService.model.Pizza;
 import com.myrestaurant.store.pizzarestaurantService.model.Topping;
 import com.myrestaurant.store.pizzarestaurantService.service.ToppingService;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +31,10 @@ public class ToppingServiceImpl implements ToppingService {
     public void deleteByid(Long id) {
         repository.deleteById(id);
 
+    }
+    @Override
+    public List<Topping> findAll(){
+        return repository.findAll();
     }
 
     @Override

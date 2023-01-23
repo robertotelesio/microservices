@@ -1,8 +1,11 @@
 package com.myrestaurant.store.pizzarestaurantService.service.impl;
 
 import com.myrestaurant.store.pizzarestaurantService.dao.PizzaRepo;
+import com.myrestaurant.store.pizzarestaurantService.dao.RestaurantRepo;
 import com.myrestaurant.store.pizzarestaurantService.model.Pizza;
+import com.myrestaurant.store.pizzarestaurantService.model.Restaurant;
 import com.myrestaurant.store.pizzarestaurantService.service.PizzaService;
+import com.myrestaurant.store.pizzarestaurantService.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,21 +13,22 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 @Transactional
 @RequiredArgsConstructor  //genera i costruttori con variabili final
-public class PizzaServiceImpl implements PizzaService {
+public class RestaurantServiceImpl implements RestaurantService {
 
-    private final PizzaRepo repository;
+    private final RestaurantRepo repository;
 
     @Override
-    public Pizza save(Pizza entity) {
+    public Restaurant save(Restaurant entity) {
         return repository.save(entity);
     }
 
     @Override
-    public List<Pizza> save(List<Pizza> entities) {
-        return (List<Pizza>) repository.saveAll(entities);
+    public List<Restaurant> save(List<Restaurant> entities) {
+        return (List<Restaurant>) repository.saveAll(entities);
     }
 
     @Override
@@ -34,18 +38,17 @@ public class PizzaServiceImpl implements PizzaService {
     }
 
     @Override
-    public Optional<Pizza> findById(Long id) {
+    public Optional<Restaurant> findById(Long id) {
         return repository.findById(id) ;
     }
 
     @Override
-    public List<Pizza> findAll(){
+    public List<Restaurant> findAll(){
         return repository.findAll();
     }
     @Override
-
-    public Pizza update(Pizza entity, Long id) {
-        Optional<Pizza> optional = findById(id);
+    public Restaurant update(Restaurant entity, Long id) {
+        Optional<Restaurant> optional = findById(id);
         if(optional.isPresent()){
             return  save(entity);
         }
