@@ -1,5 +1,7 @@
 package com.myrestaurant.store.pizzarestaurantService.dto;
 
+import com.myrestaurant.store.pizzarestaurantService.model.Driver;
+import com.myrestaurant.store.pizzarestaurantService.model.Pizza;
 import lombok.*;
 
 import java.util.HashSet;
@@ -17,5 +19,7 @@ public class RestaurantDTO {
 
     private String city;
 
-    private Set<DriverDTO> driverDTO = new HashSet<>();
+    private Set<Driver> driverDTO;
+
+    private Set<Pizza> pizzas;
 }

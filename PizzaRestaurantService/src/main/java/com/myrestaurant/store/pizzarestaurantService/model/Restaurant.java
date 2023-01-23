@@ -50,4 +50,16 @@ public class Restaurant implements Serializable {
     private Set<Driver> drivers = new HashSet<>();
 
 
+
+    @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
+    @JoinTable(
+            name = "restaurant_pizzas",
+            joinColumns = @JoinColumn(
+                    name = "restaurant_id", referencedColumnName = "restaurant_id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "pizza_id",referencedColumnName = "pizza_id"
+            )
+    )
+    @JsonIgnore
+    private Set<Pizza> pizzas = new HashSet<>();
  }
