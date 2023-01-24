@@ -6,10 +6,13 @@ import com.restaurantServices.mapper.RestaurantMapper;
 import com.restaurantServices.model.Restaurant;
 import com.restaurantServices.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Objects;
 
 
 @RestController
@@ -18,6 +21,9 @@ import java.util.List;
 public class RestaurantControllerImpl implements RestaurantController {
 
 
+
+    @Value("{$app.pizza-service-url}")
+    private String pizzaServiceUrl;
 
     private final RestaurantService restaurantService;
 
@@ -59,6 +65,13 @@ public class RestaurantControllerImpl implements RestaurantController {
         Restaurant restaurant = restaurantMapper.asEntity(restaurantDTO);
         return restaurantMapper.asDTO(restaurantService.update(restaurant,id));
 
+    }
+
+    @Override
+    @GetMapping("/pizzas/{restaurantId}")
+    public List<Object> GetPizzasByRestaurantId(@PathVariable("restaurantId") Long restaurantId) {
+        RestTemplate restTemplate = new RestTemplate();
+        return List.of(Objects.requireNonNull(restTemplate.getForObject(pizzaServiceUrl + "/"+ restaurantId , Object[].class)));
     }
 
 

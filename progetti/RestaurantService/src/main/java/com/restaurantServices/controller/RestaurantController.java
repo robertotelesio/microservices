@@ -30,4 +30,7 @@ public interface RestaurantController {
 //    public RestaurantDTO addPizzasToRestaurant(@RequestBody RestaurantDTO restaurantDTO);
 
 
+    @ApiOperation("get pizzas by Restaurant")
+    public List<Object>GetPizzasByRestaurantId(@RequestBody Long restaurantId);
 }
+
