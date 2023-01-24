@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Esercizio 2/RestaurantService/PizzaRestaurantService.iml" filepath="$PROJECT_DIR$/Esercizio 2/RestaurantService/PizzaRestaurantService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizio 3/RestaurantService/PizzaRestaurantService (1).iml" filepath="$PROJECT_DIR$/Esercizio 3/RestaurantService/PizzaRestaurantService (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizio 2/pizzaService/PizzaService.iml" filepath="$PROJECT_DIR$/Esercizio 2/pizzaService/PizzaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Esercizio 3/pizzaService/PizzaService (1).iml" filepath="$PROJECT_DIR$/Esercizio 3/pizzaService/PizzaService (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/progetti.iml" filepath="$PROJECT_DIR$/.idea/progetti.iml" />
+    </modules>
+  </component>
+</project>

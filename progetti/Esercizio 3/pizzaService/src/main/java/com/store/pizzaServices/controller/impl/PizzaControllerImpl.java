@@ -6,10 +6,13 @@ package com.store.pizzaServices.controller.impl;
 
 import com.store.pizzaServices.controller.PizzaController;
 import com.store.pizzaServices.dto.PizzaDTO;
+import com.store.pizzaServices.dto.RestaurantIdsDTO;
 import com.store.pizzaServices.mapper.PizzaMapper;
+import com.store.pizzaServices.mapper.RestaurantIdsMapper;
 import com.store.pizzaServices.model.Pizza;
 
- import com.store.pizzaServices.service.PizzaService;
+import com.store.pizzaServices.model.RestaurantIds;
+import com.store.pizzaServices.service.PizzaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +26,15 @@ public class PizzaControllerImpl implements PizzaController {
 
     private final PizzaService pizzaService;
 
+    private final RestaurantIdsMapper restaurantIdsMapper;
     private final PizzaMapper pizzaMapper;
+
+    @Override
+    @PostMapping("/restaurant")
+    public List<PizzaDTO> addPizzaToRestaurant(List<RestaurantIdsDTO> restaurantIdsDTOS) {
+        List<RestaurantIds> restaurantIds = restaurantIdsMapper.asEntityList(restaurantIdsDTOS);
+        return pizzaMapper.asDTOList(pizzaService.addPizzasToRestaurant(restaurantIds));
+    }
 
     @Override
     @PostMapping
@@ -32,13 +43,7 @@ public class PizzaControllerImpl implements PizzaController {
         Pizza pizza = pizzaMapper.asEntity(pizzaDTO);
         return pizzaMapper.asDTO(pizzaService.save(pizza));
     }
-//    stesso metodo
-//    public PizzaDTO save(@RequestBody PizzaDTO pizzaDTO) {
-//        Pizza pizza = pizzaMapper.asEntity(pizzaDTO);
-//        Pizza saved = pizzaService.save(pizza);
-//        PizzaDTO dto = pizzaMapper.asDTO(saved);
-//        return dto;
-//    }
+
 
     @Override
     @GetMapping("/{id}")

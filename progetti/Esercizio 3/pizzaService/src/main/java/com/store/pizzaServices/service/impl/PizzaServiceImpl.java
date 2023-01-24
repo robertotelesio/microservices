@@ -60,6 +60,18 @@ public class PizzaServiceImpl implements PizzaService {
         return pizzas;
     }
 
+    @Override
+    public List<Pizza> addPizzasToRestaurant(List<RestaurantIds> restaurantIds) {
+        List<RestaurantIds> result = restaurantIdsRepo.saveAll(restaurantIds);
+        List<Pizza> pizzas = new ArrayList<>(result.size());
+        for (RestaurantIds el : result){
+            pizzas.add(pizzaRepo.findById(el.getPizzaId()).get());
+        }
+         restaurantIdsRepo.saveAll(restaurantIds);
+
+                return pizzas;
+    }
+
 
     @Override
     public Pizza update(Pizza entity, Long id) {

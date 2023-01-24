@@ -11,9 +11,11 @@ import java.util.List;
 public interface PizzaService extends GenericService<Pizza, Long>{
     List<Pizza> findAll();
 
+
+
     List<Pizza>findByRestaurantId(Long restaurantId);
 
-    //List<Pizza> addPizzasToRestaurant(List<RestaurantIds> restaurantIds);
+    List<Pizza> addPizzasToRestaurant(List<RestaurantIds> restaurantIds);
 
 
 }
