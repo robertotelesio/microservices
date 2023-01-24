@@ -54,7 +54,14 @@ public class PizzaControllerImpl implements PizzaController {
     }
 
     @Override
-    @GetMapping
+    @GetMapping("/restaurant/{id}")
+    public List<PizzaDTO> findByRestaurantId(@PathVariable("id")Long restaurantId) {
+        List<Pizza> pizzas = pizzaService.findByRestaurantId(restaurantId);
+        return pizzaMapper.asDTOList(pizzas);
+    }
+
+    @Override
+    @GetMapping("/lista")
     public List<PizzaDTO> list() {
         return pizzaMapper.asDTOList(pizzaService.findAll());
     }
@@ -67,10 +74,6 @@ public class PizzaControllerImpl implements PizzaController {
 
     }
 
-    @Override
-    public List<PizzaDTO> findByRestaurantId(Long restaurantId) {
-        return null;
-    }
 
 
 }
