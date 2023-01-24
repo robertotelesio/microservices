@@ -23,7 +23,7 @@ public class RestaurantControllerImpl implements RestaurantController {
 
 
 
-    @Value("{$app.pizza-service-url}")
+    @Value("${app.pizza-service-url}")
     private String pizzaServiceUrl;
 
     private final RestaurantService restaurantService;
