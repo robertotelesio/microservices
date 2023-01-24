@@ -62,7 +62,6 @@ public class PizzaServiceImpl implements PizzaService {
 
 
     @Override
-
     public Pizza update(Pizza entity, Long id) {
         Optional<Pizza> optional = findById(id);
         if(optional.isPresent()){
