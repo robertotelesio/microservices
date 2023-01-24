@@ -1,13 +1,13 @@
-package com.myrestaurant.store.pizzaService;
+package com.restaurantServices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PizzaRestaurantServiceApplication {
+public class RestaurantServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PizzaRestaurantServiceApplication.class, args);
+        SpringApplication.run(RestaurantServiceApplication.class, args);
     }
 
 }
