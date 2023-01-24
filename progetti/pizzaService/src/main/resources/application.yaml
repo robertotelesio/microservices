@@ -1,9 +1,9 @@
 spring:
   application:
-    name: PIZZA-RESTAURANT-SERVICE
+    name: PIZZA-SERVICE
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:/Users/robertotelesio/data/PizzaRestaurantServiceDB;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:/Users/robertotelesio/data/PizzaServiceDB;AUTO_SERVER=TRUE
     username: sa
     password: sa
   jpa:
