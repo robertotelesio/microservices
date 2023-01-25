@@ -1,4 +1,4 @@
-package com.myrestaurant.store.pizzarestaurantService;
+package com.myrestaurant.store.pizzaService;
 
 
 import com.store.pizzaServices.PizzaServiceApplication;
