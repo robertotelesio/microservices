@@ -1,27 +1,42 @@
+#spring:
+#  application:
+#    name: PIZZA-SERVICE
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/
+#
+#    username: root
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    ddl-auto: update
+#  h2:
+#    console:
+#      enabled: true
+#      settings:
+#        web-allow-others: true
+#  mvc:
+#    path match:
+#      matching-strategy: ant
+
+
 spring:
-  application:
-    name: PIZZA-SERVICE
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:/Users/robertotelesio/data/PizzaServiceDB;AUTO_SERVER=TRUE
-    username: sa
-    password: sa
+    driverClassName: com.mysql.jdbc.cj.Driver
+    url: jdbc:mysql://localhost:3306/pizzaServiceDB
+    username: root
+    password: password
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: update
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
 
 server:
   port: 9090
   servlet:
     context-path: /api
 
-
+    #    driver-class-name: org.h2.Driver
+    #    url: jdbc:h2:file:/Users/robertotelesio/data/PizzaServiceDB;AUTO_SERVER=TRUE
+    #    username: sa
+    #    #    password: sa
