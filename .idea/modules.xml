@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/progetti/PizzaRestaurantService/PizzaRestaurantService.iml" filepath="$PROJECT_DIR$/progetti/PizzaRestaurantService/PizzaRestaurantService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/progetti/pizzaService/PizzaService.iml" filepath="$PROJECT_DIR$/progetti/pizzaService/PizzaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/progetti/Esercizio 3/RestaurantService/PizzaRestaurantService (1).iml" filepath="$PROJECT_DIR$/progetti/Esercizio 3/RestaurantService/PizzaRestaurantService (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/progetti/Esercizio 3/pizzaService/PizzaService.iml" filepath="$PROJECT_DIR$/progetti/Esercizio 3/pizzaService/PizzaService.iml" />
       <module fileurl="file://$PROJECT_DIR$/progetti/RestaurantService/RestaurantService.iml" filepath="$PROJECT_DIR$/progetti/RestaurantService/RestaurantService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/microservices.iml" filepath="$PROJECT_DIR$/.idea/microservices.iml" />
     </modules>
