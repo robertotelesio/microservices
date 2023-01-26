@@ -23,6 +23,9 @@ public class RabbitMQConfig {
     @Value("${app.rabbitmq.add-pizzas-routingkey}")
     private String addPizzasToRestaurantRoutingKey;
 
+    @Value("${app.rabbitmq.notify-pizzas-added-routingkey}")
+    private String notifyPizzasToRestaurantAddRoutingkey;
+
     @Value("${app.rabbitmq.pizzas-added-routingkey}")
     private String pizzasToRestaurantAddedRoutingKey;
 
@@ -40,6 +43,15 @@ public class RabbitMQConfig {
         return QueueBuilder.durable(addPizzasToRestaurantRoutingKey)
                 .build();
     }
+
+    @Bean
+    public Queue notifyPizzasToRestaurantAddedQueue() {
+        return QueueBuilder.durable(notifyPizzasToRestaurantAddRoutingkey)
+                .build();
+    }
+
+
+
 
     @Bean
     public RetryOperationsInterceptor retryInterceptor() {

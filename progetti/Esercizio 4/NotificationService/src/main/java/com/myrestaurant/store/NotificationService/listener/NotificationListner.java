@@ -18,10 +18,9 @@ public class NotificationListner {
 
     private final SMSService smsService;
 
-    @RabbitListener(queues = {"${app.rabbitmq.pizzas-added-routingkey}"})
-    public void onAddPizzaToRestaurant(List<Object> pizzas) {
-        log.info("into onAddPizzaToRestaurant method.");
-        String message = "Added n." + pizzas.size() + "pizzas !";
+    @RabbitListener(queues = {"${app.rabbitmq.notify-pizzas-added-routingkey}"})
+    public void onNotifyAddPizzaToRestaurant(String message) {
+        log.info("into notify method.");
         emailService.sendMessage(message);
         smsService.sendMessage(message);
     }

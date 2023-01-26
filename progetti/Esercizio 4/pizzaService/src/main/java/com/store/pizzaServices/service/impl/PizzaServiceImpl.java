@@ -27,6 +27,9 @@ public class PizzaServiceImpl implements PizzaService {
     private final RabbitTemplate rabbitTemplate;
     private final PizzaRepo pizzaRepo;
 
+    @Value("${app.rabbitmq.notify-pizzas-added-routingkey}")
+    private String NotifyPizzasToRestaurantAddRoutingkey;
+
     @Value("${app.rabbitmq.pizzas-added-routingkey}")
     private String addPizzasToRestaurantAddRoutingkey;
 
@@ -75,6 +78,10 @@ public class PizzaServiceImpl implements PizzaService {
         }
          restaurantIdsRepo.saveAll(restaurantIds);
         rabbitTemplate.convertAndSend("",addPizzasToRestaurantAddRoutingkey,pizzas);
+
+        String message = "added n."+ pizzas.size() + "pizzas";
+
+        rabbitTemplate.convertAndSend("",NotifyPizzasToRestaurantAddRoutingkey,pizzas);
                 return pizzas;
     }
 
