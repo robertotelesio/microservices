@@ -2,8 +2,8 @@ spring:
   application:
     name: NOTIFICATION-SERVICE
 
-  app:
-    rabbitmq:
-      restaurant-service-routingkey: q.add-pizzas-to-restaurant
+app:
+  rabbitmq:
+    restaurant-service-routingkey: q.add-pizzas-to-restaurant
 server:
   port: 9092

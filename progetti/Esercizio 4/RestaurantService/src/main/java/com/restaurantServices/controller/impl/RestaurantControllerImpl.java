@@ -53,7 +53,7 @@ public class RestaurantControllerImpl implements RestaurantController {
     @Override
     @PostMapping("/addPizzas")
     @ResponseStatus(HttpStatus.OK)
-    public List<Object> addPizzaToRestaurant(@RequestBody List<RestaurantIdsDTO> restaurantIdsDTOS) {
+    public List<Object> addPizzasToRestaurant(@RequestBody List<RestaurantIdsDTO> restaurantIdsDTOS) {
         RestTemplate restTemplate = new RestTemplate();
         List<Object> result = List.of(Objects.requireNonNull(
                 restTemplate.postForObject(

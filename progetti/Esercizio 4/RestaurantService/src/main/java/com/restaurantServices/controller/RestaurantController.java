@@ -19,7 +19,7 @@ public interface RestaurantController {
 
     @PostMapping("/addPizzas")
     @ResponseStatus(HttpStatus.OK)
-    List<Object> addPizzaToRestaurant(@RequestBody List<RestaurantIdsDTO> restaurantIdsDTOS);
+    List<Object> addPizzasToRestaurant(@RequestBody List<RestaurantIdsDTO> restaurantIdsDTOS);
 
     @ApiOperation("Add new Restaurant")
     public RestaurantDTO save(@RequestBody RestaurantDTO restaurantDTO);
