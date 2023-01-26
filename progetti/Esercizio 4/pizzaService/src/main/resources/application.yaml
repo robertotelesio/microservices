@@ -27,3 +27,8 @@ server:
   port: 9090
   servlet:
     context-path: /api
+
+app:
+  rabbitmq:
+    add-pizzas-routingkey: q.add-pizzas-to-restaurant
+    pizzas-added-routingkey: q.add-pizzas-to-restaurant
