@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: CONFIG-SERVICE
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/robertotelesio/PizzaRestaurantProperties.git
+          clone-on-start: true
+          skip-ssl-validation: true
+          force-pull: true
+
+          default-label: master
+server:
+  port: 8888
+  servlet:
+      context-path: /config
+
+

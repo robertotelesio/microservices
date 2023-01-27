@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NotificationService" />
+        <module name="ConfigService" />
         <module name="DiscoveryService" />
         <module name="gatewayService" />
       </profile>
@@ -26,6 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ConfigService" target="19" />
       <module name="DiscoveryService" target="19" />
       <module name="gatewayService" target="19" />
       <module name="NotificationService" target="19" />
@@ -35,6 +37,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ConfigService" options="-parameters" />
       <module name="DiscoveryService" options="-parameters" />
       <module name="NotificationService" options="-parameters" />
       <module name="PizzaService" options="-parameters" />
