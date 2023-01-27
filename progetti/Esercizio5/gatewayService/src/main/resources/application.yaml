@@ -11,9 +11,9 @@ spring:
           predicates:
             - Path= /api/restaurants/**, /api/drivers/**
 
-
-
-
+    config:
+      enabled: false
+      
 server:
   port: 8080
 

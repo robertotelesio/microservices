@@ -28,6 +28,11 @@ public class PizzaServiceImpl implements PizzaService {
 
     private final RabbitTemplate rabbitTemplate;
 
+//    rabbitmq:
+//    add-pizzas-routingkey: q.add-pizzas-to-restaurant
+//    pizzas-added-routingkey: q.pizzas-added-to-restaurant
+//    notify-pizzas-added-routingkey: q.notify-pizzas-added-to-restaurant
+
     @Value("${app.rabbitmq.pizzas-added-routingkey}")
     private String pizzasToRestaurantAddRoutingKey;
 

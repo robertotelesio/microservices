@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/Esercizio5/RestaurantService/pom.xml" />
         <option value="$PROJECT_DIR$/Esercizio5/DiscoveryService/pom.xml" />
         <option value="$PROJECT_DIR$/Esercizio5/NotificationService/pom.xml" />
+        <option value="$PROJECT_DIR$/Esercizio5/ConfigService/pom.xml" />
+        <option value="$PROJECT_DIR$/Esercizio5/GatewayService/pom.xml" />
       </list>
     </option>
   </component>

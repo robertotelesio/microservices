@@ -23,6 +23,8 @@ public class RabbitMQConfig {
     @Value("${app.rabbitmq.pizzas-added-routingkey}")
     private String pizzasToRestaurantAddedRoutingKey;
 
+
+
     public RabbitMQConfig(CachingConnectionFactory cachingConnectionFactory) {
         this.cachingConnectionFactory = cachingConnectionFactory;
     }
