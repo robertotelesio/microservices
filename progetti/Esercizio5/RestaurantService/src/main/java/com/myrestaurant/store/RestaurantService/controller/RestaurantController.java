@@ -28,8 +28,17 @@ public interface RestaurantController {
     public void delete(@PathVariable("id") Long id);
 
     @ApiOperation("Find all data")
-    public List<RestaurantDTO> list();
+    public List<RestaurantDTO> findAllRestaurants();
 
     @ApiOperation("Update one data")
     public RestaurantDTO update(@RequestBody RestaurantDTO dto, @PathVariable("id") Long id);
+
+    @ApiOperation("Add pizzas to a restaurant fallback")
+    List<Object> addPizzasToRestaurantFallback(Exception e);
+
+    @ApiOperation("Get pizzas from a restaurant fallback")
+    List<Object> getPizzasToRestaurantFallback(Exception e);
+
+    @ApiOperation("Add pizzas to a restaurant Async call")
+    List<Object> addPizzaToRestaurantASync(@RequestBody List<RestaurantIdsDTO> restaurantIdsDTOS);
 }

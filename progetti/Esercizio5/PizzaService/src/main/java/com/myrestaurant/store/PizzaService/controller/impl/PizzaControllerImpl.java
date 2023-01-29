@@ -9,6 +9,7 @@ import com.myrestaurant.store.PizzaService.model.Pizza;
 import com.myrestaurant.store.PizzaService.model.RestaurantIds;
 import com.myrestaurant.store.PizzaService.service.PizzaService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ import java.util.List;
 @RequestMapping("/pizzas")
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class PizzaControllerImpl implements PizzaController {
 
     private final PizzaService pizzaService;
